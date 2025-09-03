@@ -12,6 +12,7 @@
     <title>Home</title>
 </head>
 <body>
+    <nav class="navbar"></nav>
     <div class="shadow-lg rounded-2xl bg-[#f0f8f3] sm:my-10 sm:mx-8 sm:pt-14 sm:pb-8 py-9 sm:px-14 px-5">        
         <section class="flex flex-col sm:flex-row items-center justify-between gap-0 sm:gap-8 md:gap-0">
             <div class="text-center sm:text-left flex text-[#562057] flex-col gap-2 w-full sm:w-1/2">
@@ -98,5 +99,23 @@
             </div>
         </section>
     </div>
+    <footer class="footer_ui"></footer>
 </body>
+
+<script>
+    const nav = document.querySelector('.navbar')
+    fetch('/components/navbar.html')
+    .then(res=>res.text())
+    .then(data=>{
+        nav.innerHTML=data
+    })
+
+    const ft = document.querySelector('.footer_ui')
+    fetch('/components/footer.html')
+    .then(res=>res.text())
+    .then(data=>{
+        ft.innerHTML=data
+    })
+</script>
+
 </html>
