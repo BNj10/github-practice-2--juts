@@ -103,6 +103,10 @@
 </body>
 
 <script>
+    if (!localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'login.html';
+    }
+    
     const nav = document.querySelector('.navbar')
     fetch('/components/navbar.html')
     .then(res=>res.text())
