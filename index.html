@@ -12,10 +12,114 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="sm:mx-auto sm:max-w-4xl shadow-lg rounded-2xl bg-[#f0f8f3] sm:my-15 my-3 mx-3 sm:pt-14 sm:pb-8 py-5 sm:px-14 px-5">
-        <div class="mx-auto bg-[#333] w-full flex my-20 ">
-            s
-        </div>
+    <nav class="navbar"></nav>
+    <div class="shadow-lg rounded-2xl bg-[#f0f8f3] sm:my-10 sm:mx-8 sm:pt-14 sm:pb-8 py-9 sm:px-14 px-5">        
+        <section class="flex flex-col sm:flex-row items-center justify-between gap-0 sm:gap-8 md:gap-0">
+            <div class="text-center sm:text-left flex text-[#562057] flex-col gap-2 w-full sm:w-1/2">
+                <p class="text-2xl sm:text-4xl font-bold">10,000+ of our users love our products.</p>
+                <p class="text-xs sm:text-md">We only provide great products combined with excellent customer service. See what our satisfied customers are saying about our services.</p>
+            </div>
+            
+            <div class="font-bold my-7 flex flex-col items-center justify-center text-xs text-black w-full sm:w-max gap-3">
+                <div class="bg-[#f7f2f8] rounded-md py-3 px-4 w-full mr-0 sm:mr-10">
+                    <div class=" flex flex-col sm:flex-row flex-wrap sm:gap-3 gap-1 items-center justify-center">
+                        <div class="flex flex-row items-center justify-center">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">                                
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                        </div>
+                        <div>
+                            <h2 class="">Rated 5 Stars in Reviews</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f7f2f8] rounded-md py-3 px-4 w-full mx-5">
+                    <div class="flex flex-col sm:flex-row flex-wrap sm:gap-3 gap-1 items-center justify-center">
+                        <div class="flex flex-row items-center justify-center">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                        </div>
+                        <div>
+                            <h2 class="">Rated 5 Stars in Reviews</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f7f2f8] rounded-md py-3 px-4 w-full ml-0 sm:ml-10">
+                    <div class="flex flex-col sm:flex-row flex-wrap sm:gap-3 gap-1 items-center justify-center">
+                        <div class="flex flex-row items-center justify-center">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                            <img src="./assets/icon-star.svg" alt="Description of SVG">
+                        </div>
+                        <div>
+                            <h2 class="">Rated 5 Stars in Reviews</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </section>
+
+        <section class="flex flex-col sm:flex-row text-white gap-2 justify-between my-0 sm:my-8">
+            <div class="bg-[#511f50] rounded-lg px-4 py-6 flex flex-col gap-4 mb-0 sm:mb-10">
+                <div class="flex flex-row items-center gap-4">
+                    <img class="rounded-full size-5" src="./assets/image-colton.jpg" alt="img of colton">
+                    <div class="flex flex-col items-cente text-left">
+                        <p class="font-bold text-xs">Colton Smith</p>
+                        <p class="text-[#a25488] font-bold text-xs">Verified Buyer</p>
+                    </div>
+                </div>
+                <p class="text-xs">“ We needed the same printed design as the one we had ordered a week prior. Not only did they find the original order, but we also received it in time. Excellent! ”</p>
+            </div>
+            <div class="bg-[#511f50] rounded-lg px-4 py-6 flex flex-col gap-4  my-0 sm:my-5">
+                <div class="flex flex-row items-center gap-4">
+                    <img class="rounded-full size-5" src="./assets/image-irene.jpg" alt="img of colton">
+                    <div class="flex flex-col items-cente text-left">
+                        <p class="font-bold text-xs">Irene Roberts</p>
+                        <p class="text-[#a25488] font-bold text-xs">Verified Buyer</p>
+                    </div>
+                </div>
+                <p class="text-xs">“ Customer service is always excellent and very quick turn around. Completely delighted with the simplicity of the purchase and the speed of delivery. ”</p>
+            </div>
+            <div class="bg-[#511f50] rounded-lg px-4 py-6 flex flex-col gap-4 mt-0 sm:mt-10">
+                <div class="flex flex-row items-center gap-4">
+                    <img class="rounded-full size-5" src="./assets/image-anne.jpg" alt="img of colton">
+                    <div class="flex flex-col items-cente text-left">
+                        <p class="font-bold text-xs">Anne Wallace</p>
+                        <p class="text-[#a25488] font-bold text-xs">Verified Buyer</p>
+                    </div>
+                </div>
+                <p class="text-xs">“ Put an order with this company and can only praise them for the very high standard. Will definitely use them again and recommend them to everyone! ”</p>
+            </div>
+        </section>
     </div>
+    <footer class="footer_ui"></footer>
 </body>
+
+<script>
+    if (!localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'login.html';
+    }
+    
+    const nav = document.querySelector('.navbar')
+    fetch('/components/navbar.html')
+    .then(res=>res.text())
+    .then(data=>{
+        nav.innerHTML=data
+    })
+
+    const ft = document.querySelector('.footer_ui')
+    fetch('/components/footer.html')
+    .then(res=>res.text())
+    .then(data=>{
+        ft.innerHTML=data
+    })
+</script>
+
 </html>
