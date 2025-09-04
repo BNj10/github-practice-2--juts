@@ -7,9 +7,6 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-      @theme{
-        --color-clifford: #da373d;
-      }
     </style>
 </head>
 <body>
@@ -29,11 +26,12 @@
         </div>
 
         <div class="p-4">
-          <i class="fab fa-github text-3xl text-gray-800"></i>
+          <i  id="saquinbtn" class="fab fa-github text-3xl text-gray-800"></i>
           <h3 class="text-xl font-bold text-[#062726] mb-2">Benjie Saquin</h3>
           <h3 class="text-lg font-semibold text-gray-800 mb-2">Team Leader</h3>
           <p class="text-gray-600">
             Leads the group, ensures smooth teamwork, and keeps the project aligned with goals from start to finish
+          </p>
         </div>  
       </div>
 
@@ -44,7 +42,7 @@
         </div>
 
         <div class="p-4">
-          <i class="fab fa-github text-3xl text-gray-800"></i>
+          <i id="arradazabtn" class="fab fa-github text-3xl text-gray-800"></i>
           <h3 class="text-xl font-bold text-[#062726] mb-2">Reipoh Gabriel Arradaza</h3>
           <h3 class="text-lg font-semibold text-gray-800 mb-2">UI/UX Developer</h3>
           <p class="text-gray-600">
@@ -58,7 +56,7 @@
         </div>
 
         <div class="p-4">
-          <i class="fab fa-github text-3xl text-gray-800"></i>
+          <i id="lagunabtn" class="fab fa-github text-3xl text-gray-800"></i>
           <h3 class="text-xl font-bold text-[#062726] mb-2">Marylle Laguna</h3>
           <h3 class="text-lg font-semibold text-gray-800 mb-2">Back-end Developer</h3>
           <p class="text-gray-600">
@@ -72,7 +70,7 @@
         </div>
 
         <div class="p-4">
-          <i class="fab fa-github text-3xl text-gray-800"></i>
+          <i id="molarbtn" class="fab fa-github text-3xl text-gray-800"></i>
           <h3 class="text-xl font-bold text-[#062726] mb-2">Bea Molar</h3>
           <h3 class="text-lg font-semibold text-gray-800 mb-2">Front-end Developer</h3>
           <p class="text-gray-600">
@@ -87,7 +85,7 @@
         </div>
 
         <div class="p-4">
-          <i class="fab fa-github text-3xl text-gray-800"></i>
+          <i id="ballajadiabtn" class="fab fa-github text-3xl text-gray-800"></i>
           <h3 class="text-xl font-bold text-[#062726] mb-2">Ericson Ballajadia</h3>
           <h3 class="text-lg font-semibold text-gray-800 mb-2">Front-end Developer</h3>
           <p class="text-gray-600">
@@ -103,7 +101,7 @@
         </div>
 
         <div class="p-4">
-          <i class="fab fa-github text-3xl text-gray-800"></i>
+          <i id="salabtn" class="fab fa-github text-3xl text-gray-800"></i>
           <h3 class="text-xl font-bold text-[#062726] mb-2">Justin Sala</h3>
           <h3 class="text-lg font-semibold text-gray-800 mb-2">Back-end Developer</h3>
           <p class="text-gray-600">
@@ -116,6 +114,28 @@
 
   </div>
 </section>
+
+  <script>
+    document.getElementById("saquinbtn").addEventListener("click", function() {
+      window.open("https://github.com/BNj10", "_blank"); 
+    });
+
+    document.getElementById("arradazabtn").addEventListener("click", function() {
+      window.open("https://github.com/pipesSomeAndSSam", "_blank"); 
+    });
+    document.getElementById("lagunabtn").addEventListener("click", function() {
+      window.open("https://github.com/slpyMryll", "_blank"); 
+    });
+    document.getElementById("molarbtn").addEventListener("click", function() {
+      window.open("https://github.com/molar-bea", "_blank"); 
+    });
+    document.getElementById("ballajadiabtn").addEventListener("click", function() {
+      window.open("https://github.com/ericsonbalajadia", "_blank"); 
+    });
+    document.getElementById("salabtn").addEventListener("click", function() {
+      window.open("https://github.com/LostGheno", "_blank"); 
+    });
+  </script>
 
 </body>
 </html>
