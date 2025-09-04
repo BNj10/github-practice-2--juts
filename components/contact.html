@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'button-bg': '#a75d5d',
+                        'button-bg-hover': '#744040',
+                        
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .btn-loading {
+            position: relative;
+            color: transparent !important;
+        }
+
+        .btn-loading::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            margin-left: -10px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            border-top-color: transparent;
+            animation: spin 0.8s ease infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        
+        .fade-out {
+            animation: fadeOut 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(-10px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        @keyframes fadeOut {
+            from { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+            to { 
+                opacity: 0; 
+                transform: translateY(-10px); 
+                visibility: hidden;
+            }
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #8b949e;
+        }
+
+        input, textarea {
+            color: #333;
+        }
+
+        .error-border {
+            border-color: #e74c3c !important;
+        }
+
+        .success-border {
+            border-color: #27ae60 !important;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f9f9f9] font-sans text-[#333] m-0 min-h-screen flex items-center justify-center py-8">
+    <section class="max-w-[600px] w-full mx-4 p-6 bg-white rounded-lg shadow-md">
+        
+         <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                <i class="fas fa-envelope-open-text fa-xl text-blue-600"></i>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800">Contact Us</h1>
+            <p class="text-gray-600 mt-2">We would love to hear from you! Please fill out the form below to get in touch.</p>
+        </div>
+
+        <div id="success-message" class="bg-green-100 text-green-700 p-4 rounded-lg mb-6 hidden border-l-4 border-green-500">
+            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+            <span>Your message has been sent successfully! We'll get back to you soon.</span>
+        </div>
+
+        <form id="contact-form" class="flex flex-col space-y-4">
+
+            <label for="name" class="font-medium my-1 font-bold block">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required class="p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-300">
+
+            <label for="email" class="font-medium my-1 font-bold block">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required class="p-3 border border-gray-300 rounded-md w-full placeholder-[#8b949e] focus:outline-none focus:ring-2 focus:ring-blue-300">
+
+            <label for="message" class="font-medium my-1 font-bold block">Message:</label>
+            <textarea id="message" name="message" placeholder="Write your message" required class="p-3 border border-gray-300 rounded-md w-full placeholder-[#8b949e] focus:outline-none focus:ring-2 focus:ring-blue-300"></textarea>
+
+            <button type="submit" id="submit-button" class="mt-4 p-3 bg-button-bg text-white border-none rounded-md text-base cursor-pointer transition duration-300 hover:bg-button-bg-hover">
+                <span class="flex items-center justify-center">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Submit
+                </span>
+            </button>
+        </form>
+
+        
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const submitButton = document.getElementById('submit-button');
+            const successMessage = document.getElementById('success-message');
+            const statusIndicator = document.getElementById('status-indicator');
+            
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Basic form validation
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const messageInput = document.getElementById('message');
+                
+                let isValid = true;
+                
+                // Reset any previous error states
+                [nameInput, emailInput, messageInput].forEach(input => {
+                    input.classList.remove('border-red-500', 'shake');
+                });
+                
+                // Validate name
+                if (!nameInput.value.trim()) {
+                    nameInput.classList.add('border-red-500', 'shake');
+                    isValid = false;
+                }
+                
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value)) {
+                    emailInput.classList.add('border-red-500', 'shake');
+                    isValid = false;
+                }
+                
+                // Validate message
+                if (!messageInput.value.trim()) {
+                    messageInput.classList.add('border-red-500', 'shake');
+                    isValid = false;
+                }
+                
+                if (!isValid) {
+                    
+                    return;
+                }
+                
+                // Hide any previous messages
+                successMessage.classList.add('hidden');
+                
+                // Disable the button to prevent multiple submissions
+                submitButton.disabled = true;
+                
+                // Add loading class to show spinner
+                submitButton.classList.add('btn-loading');
+                
+                // Simulate network delay (1-2 seconds)
+                const delay = 1000 + Math.random() * 1000;
+                
+                setTimeout(() => {
+                    // Show success message
+                    successMessage.classList.remove('hidden');
+                    
+                    // Reset form
+                    contactForm.reset();
+
+                    // Remove loading spinner
+                    submitButton.classList.remove('btn-loading');
+                    
+                    // Re-enable the button
+                    submitButton.disabled = false;
+                    
+                    //Hide success message after 5 seconds
+                    setTimeout(() => {
+                        // Add fade-out animation
+                        successMessage.classList.remove('fade-in');
+                        successMessage.classList.add('fade-out');
+                        
+                        // After animation completes, add hidden class
+                        setTimeout(() => {
+                            successMessage.classList.add('hidden');
+                            successMessage.classList.remove('fade-out');
+                        }, 500); // Match this to the animation duration
+                    }, 5000);
+                }, delay);
+            });
+            
+            // Add input event listeners to remove error styles when user types
+            const inputs = contactForm.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    this.classList.remove('border-red-500', 'shake');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
